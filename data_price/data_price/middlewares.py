@@ -13,7 +13,8 @@ from selenium.webdriver.chrome.options import Options
 import undetected_chromedriver as uc
 from scrapy_selenium import SeleniumRequest
 from scrapy_selenium.middlewares import SeleniumMiddleware
-
+from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
+from scrapy.utils.project import get_project_settings
 from w3lib.http import basic_auth_header
 import random
 
@@ -164,3 +165,16 @@ class UndetectableSeleniumMiddleware(SeleniumMiddleware):
             use_subprocess=True,  # Important for undetectability
         )
         return driver
+    
+class RandomUserAgentMiddleware(UserAgentMiddleware):
+    def __init__(self, user_agent='Scrapy'):
+        self.user_agent = user_agent
+        settings = get_project_settings()
+        self.user_agent_choices = settings.get('USER_AGENT_CHOICES', [])
+
+    def process_request(self, request, spider):
+        if self.user_agent_choices:
+            user_agent = random.choice(self.user_agent_choices)
+            request.headers['User-Agent'] = user_agent
+            # Log the user agent (optional)
+            spider.logger.debug(f'Using User-Agent: {user_agent}')
