@@ -3,7 +3,7 @@ Dự đoán giá đất tháng 5 :D
 -------
 Cách crawl dữ liệu : 
 ```bash
-scrapy crawl alonhadat -o ../data/output.json --set FEED_EXPORT_ENCODING=utf-8
+scrapy crawl alonhadat -o ../data/demo.json --set FEED_EXPORT_ENCODING=utf-8
 ```
 
 -------
