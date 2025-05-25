@@ -22,7 +22,6 @@ Icon
 # Jupyter Notebook
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
-demo.ipynb
 
 # Distribution / packaging
 dist/
