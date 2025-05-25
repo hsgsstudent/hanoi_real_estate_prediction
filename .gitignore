@@ -1,0 +1,58 @@
+# Mac OS files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Data files (customize based on your needs)
+*.csv
+*.json
+/data/output_crawl.json
+/data/demo.csv
+/data/output.json
+
+# Large binary files
+*.pdf
+"Nhập_môn_ML-1.pdf"
+
+# Images folder
+/image/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+demo.ipynb
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Results and output folders
+/results/
+
+# Excluded models or large files
+*.h5
+*.pkl
+*.model
