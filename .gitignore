@@ -15,6 +15,7 @@ Icon
 # Large binary files
 *.pdf
 "Nhập_môn_ML-1.pdf"
+*.pptx
 
 # Images folder
 /image/
